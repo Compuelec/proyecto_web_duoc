@@ -1,56 +1,85 @@
-.header {
-    width: 100%;
-    height: 200px;
-    background-color: brown;
+/* styles.css */
+
+/* Colores personalizados */
+:root {
+  --primary-color: #6b90a8;
+  --secondary-color: #67b309;
+  --text-color: #424141;
+  --color-blanco: #FFF;
+  --color-amarillo: #fffb00;
 }
 
-.contenedor {
-    max-width: 1300px;
-    margin: auto;
+/* Cambiar el color de fondo y el color de texto del header */
+header .bg-primary {
+  background-color: var(--primary-color);
+  color: var(--color-blanco);
 }
 
-.redes-sociales {
-    width: 100%;
-    text-align: right;
-    margin-right: 50px;
-    padding-top: 10px;
-    font-size: 22px;
+/* Cambiar el color de fondo del footer */
+footer .bg-primary {
+  background-color: var(--primary-color);
 }
+
+/* Cambiar el color del texto del footer */
+footer {
+  color: var(--color-blanco);
+}
+
+/* Cambiar el color de fondo de la barra de navegación */
+nav.bg-light {
+  background-color: var(--color-blanco)!important;
+}
+
+/* Cambiar el color del texto de la barra de navegación */
+nav .nav-link {
+  color: var(--text-color) !important;
+}
+
+/* Cambiar el color del texto activo en la barra de navegación */
+nav .nav-link.active, nav .nav-link:hover {
+  color: var(--secondary-color) !important;
+}
+
+/* Cambiar el estilo del título de las tarjetas */
+.card-title {
+  font-weight: bold;
+  color: var(--text-color);
+}
+
+/* Cambiar el estilo del botón "Agregar al carrito" */
+.btn-primary {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+/* Cambiar el estilo del botón "Ver detalles" */
+.btn-secondary {
+  background-color: var(--secondary-color);
+  border-color: var(--secondary-color);
+}
+
+/* Cambiar el estilo del botón "Leer más" */
+.card .btn-primary {
+  background-color: var(--secondary-color);
+  border-color: var(--secondary-color);
+}
+
+/* Cambiar el estilo de las etiquetas <p> dentro de las tarjetas */
+.card-text {
+  color: var(--text-color);
+}
+
+/* Cambiar el estilo al carrusel */
+.carousel-item img {
+  max-height: 350px;
+  width: 100%;
+}
+
+/* Cambiar el estilo de iconos redes sociales */
 .redes-sociales a {
-    text-decoration: none;
-    color: #FFFF;
-    margin-right: 12px;
+    color: #FFF;
 }
+
 .redes-sociales a:hover {
-    color: #fce353;
-}
-
-.img-logo {
-    width: 20%;
-}
-
-.title-content {
-    width: 80%;
-    float: right;
-    text-align: center;
-    color: #FFFFFF;
-}
-
-.menu {
-    display: block;
-    width: 100%;
-    margin-top: 8px;
-}
-.menu a {
-    text-decoration: none;
-    color: #FFFF;
-    padding: 10px;
-    margin-right: 5px;
-}
-
-.menu a:hover {
-    color: #ac1515;
-    background-color: #FFFF;
-    padding: 10px;
-    margin-right: 5px;
+    color: var(--secondary-color);
 }
