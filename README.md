@@ -12,7 +12,7 @@ Proyecto para la asignatura de programación web, en primera instancia es desarr
 
 ## Instalación y configuración
 
-Describe los pasos necesarios para instalar y configurar el proyecto en un entorno local. Por ejemplo:
+Pasos necesarios para instalar y configurar el proyecto en un entorno local.
 
 1. Clona el repositorio en tu máquina local:
 
