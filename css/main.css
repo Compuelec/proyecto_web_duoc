@@ -40,6 +40,17 @@ nav .nav-link.active, nav .nav-link:hover {
   color: var(--secondary-color) !important;
 }
 
+.card {
+  padding-top: 7%;
+  margin: 2%;
+}
+
+/* Añade sombras en las tarjetas*/
+.card:hover {
+  box-shadow: 0px 1px 10px rgba(0,0,0,2);
+  transform: scale(1.1);
+}
+
 /* Cambiar el estilo del título de las tarjetas */
 .card-title {
   font-weight: bold;
@@ -87,3 +98,15 @@ nav .nav-link.active, nav .nav-link:hover {
 .redes-sociales a:hover {
     color: var(--secondary-color);
 }
+
+/*Estilo de vistas productos */
+.descricion {
+  color: var(--text-color);
+  font-weight: bold;
+  min-height: 60px;
+  margin-top: 20px;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
