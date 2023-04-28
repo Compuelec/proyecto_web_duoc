@@ -44,19 +44,6 @@ nav .nav-link.active, nav .nav-link:hover {
 .card-title {
   font-weight: bold;
   color: var(--text-color);
-  min-height: 60px;
-}
-
-.card-text {
-  width: 230px;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  overflow: hidden;
-}
-
-.card a {
-  width: 100%;
-  margin: 3px;
 }
 
 /* Cambiar el estilo del botón "Agregar al carrito" */
