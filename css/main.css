@@ -43,6 +43,7 @@ nav .nav-link.active, nav .nav-link:hover {
 /* Cambiar el estilo del título de las tarjetas */
 .card-title {
   font-weight: bold;
+  height: 60px;
   color: var(--text-color);
 }
 
@@ -67,6 +68,9 @@ nav .nav-link.active, nav .nav-link:hover {
 /* Cambiar el estilo de las etiquetas <p> dentro de las tarjetas */
 .card-text {
   color: var(--text-color);
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 
 /* Cambiar el estilo al carrusel */
