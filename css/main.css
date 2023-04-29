@@ -2,130 +2,115 @@
 
 /* Colores personalizados */
 :root {
+  --bg-primary-color: #dee1e3b1;
   --primary-color: #6b90a8;
+  --primary-color-hover: #4a6a80;
   --secondary-color: #67b309;
+  --secondary-color-hover: #487d07;
   --text-color: #424141;
   --color-blanco: #FFF;
   --color-amarillo: #fffb00;
 }
-
-/* Cambiar el color de fondo y el color de texto del header */
-header .bg-primary {
+/* ESTILOS GENERALES */
+.card-body a { /* Cambiar el estilo del botón que esta dentro de una card */
+  width: 100%;
+  margin: 3px;
+}
+.bg-primary { /* Cambiar el estilo del color de fondo primario*/
+  background-color: var(--bg-primary-color) !important;
+}
+.btn-primary { /* Cambiar el estilo del botón primario*/
   background-color: var(--primary-color);
-  color: var(--color-blanco);
+  border-color: var(--primary-color);
 }
-
-/* FOOTER */
-
-.footer {
-  background-color: var(--primary-color); /* Cambiar el color de fondo del footer */
+.btn-primary:hover {
+  background-color: var(--primary-color-hover);
+  border-color: var(--primary-color-hover);
 }
-
-.footer .container {
-  padding-top: 40px;
-  padding-bottom: 20px;
+.btn-secondary { /* Cambiar el estilo del botón secundario */
+  background-color: var(--secondary-color);
+  border-color: var(--secondary-color);
 }
-
-.footer h4 {
-  color: var(--color-blanco);
-  font-weight: 400;
-  margin-bottom: 35px;
+.btn-secondary:hover {
+  background-color: var(--secondary-color-hover);
+  border-color: var(--secondary-color-hover);
 }
-
-.footer p {
-  color: #ffffffa7;
-  font-size: 16px;
-}
-
-.txt-derechos p {
-  margin-top: 20px;
-  color: #e3e3e365;
-}
-
-.img-webpayplus {
-  width: 90%;
-}
-
-/* Cambiar el color del texto del footer */
-footer {
-  color: var(--color-blanco);
-}
-
-/* Cambiar el color de fondo de la barra de navegación */
-nav.bg-light {
-  background-color: var(--color-blanco)!important;
-}
-
-/* Cambiar el color del texto de la barra de navegación */
-nav .nav-link {
+.nav-link { /* Cambiar el color del texto de la barra de navegación */
   color: var(--text-color) !important;
 }
-
-/* Cambiar el color del texto activo en la barra de navegación */
-nav .nav-link.active, nav .nav-link:hover {
+.nav-link.active, .nav-link:hover { /* Cambiar el color del texto activo en la barra de navegación */
   color: var(--secondary-color) !important;
 }
-
-/* Añade sombras en las tarjetas*/
-.card:hover {
+.card:hover { /* Añade sombras en las tarjetas */
   box-shadow: 0px 1px 10px rgba(0,0,0,2);
   transform: scale(1.1);
 }
 
-/* Cambiar el estilo del título de las tarjetas */
-.card-title {
+/* SECCION HEADER */
+.redes-sociales a { /* Cambiar el estilo de iconos redes sociales */
+  font-size: 20px;
+  margin: 0 5px;  
+  color: var(--primary-color);
+}
+.redes-sociales a:hover {
+  color: var(--secondary-color);
+}
+.titulo {
+  display: grid;
+  align-content: center;
+}
+
+/* SECCION BARRA DE NAVEGACION (MENU) */
+
+
+/* SECCION SLIDER */
+.carousel-item img { /* Cambiar el ancho y alto de la imagen en el carrusel */
+  max-height: 350px;
+  width: 100%;
+}
+
+/* SECCION DE PRODUCTOS */
+.section-producto .cardProducto {
+  margin-bottom: 20px;
+}
+.section-producto .card-title { /* Cambiar el estilo del título de las tarjetas */
   font-weight: bold;
   height: 60px;
   color: var(--text-color);
 }
 
-/* Cambiar el estilo del botón "Agregar al carrito" */
-.btn-primary {
-  background-color: var(--primary-color);
-  border-color: var(--primary-color);
-}
-
-/* Cambiar el estilo del botón "Ver detalles" */
-.btn-secondary {
-  background-color: var(--secondary-color);
-  border-color: var(--secondary-color);
-}
-
-/* Cambiar el estilo del botón "Leer más" */
-.card-body a {
-  width: 100%;
-  margin: 3px;
-}
-
-.card .btn-primary {
-  background-color: var(--secondary-color);
-  border-color: var(--secondary-color);
-}
-
-/* Cambiar el estilo de las etiquetas <p> dentro de las tarjetas */
-.card-text {
+.section-producto .card-text { /* Cambiar el estilo de las etiquetas <p> dentro de las tarjetas */
   color: var(--text-color);
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
 }
 
-/* Cambiar el estilo al carrusel */
-.carousel-item img {
-  max-height: 350px;
-  width: 100%;
+/* SECCION FOOTER */
+.footer {
+  background-color: var(--primary-color); /* Cambiar el color de fondo del footer */
 }
-
-/* Cambiar el estilo de iconos redes sociales */
-.redes-sociales a {
-    color: #FFF;
+.footer .container {
+  padding-top: 40px;
+  padding-bottom: 20px;
 }
-
-.redes-sociales a:hover {
-    color: var(--secondary-color);
+.footer h4 { /* Cambiar el color del texto del footer */
+  color: var(--color-blanco);
+  font-weight: 400;
+  margin-bottom: 35px;
 }
-
-/*Estilo de vistas productos */
+.footer p {
+  color: #ffffffa7;
+  font-size: 16px;
+}
+.txt-derechos p {
+  margin-top: 20px;
+  color: #e3e3e365;
+}
+.img-webpayplus {
+  width: 90%;
+}
+/* SECCION DETALLE DE PRODUCTO*/
 .descricion {
   color: var(--text-color);
   font-weight: bold;
@@ -136,3 +121,24 @@ nav .nav-link.active, nav .nav-link:hover {
   letter-spacing: 1px;
 }
 
+/* PANTALLA EN RESOLUCIONES < 992 px */
+@media (max-width: 991px) {
+  .navbar .container {
+    max-width: 100%;
+    display: block;
+  }
+  .logo-container {
+    max-width: 100%;
+  }
+}
+
+/* PANTALLA EN RESOLUCIONES < 768 px */
+@media (max-width: 767px) {
+  .logo-container {
+    display: grid;
+    text-align: center;
+  }
+  .logo-container img {
+    width: 50%;
+  }
+}

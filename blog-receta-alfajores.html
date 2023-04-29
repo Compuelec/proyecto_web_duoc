@@ -15,15 +15,15 @@
   <!-- Header -->
   <header>
     <div class="container-fluid bg-primary py-2">
-      <div class="container">
+      <div class="container logo-container">
         <div class="row">
-          <div class="col-4">
+          <div class="col-md-3 col-lg-3 mb-12">
             <img src="img/logo.webp" alt="Logo" class="img-fluid">
           </div>
-          <div class="col-4 text-center">
+          <div class="col-md-6 col-lg-6 mb-12 text-center titulo">
             <h1>La Danesa Pasteleria</h1>
           </div>
-          <div class="col-4 text-right">
+          <div class="col-md-3 col-lg-3 mb-12 text-right">
             <div class="redes-sociales">
                 <a href="#"><i class="fab fa-facebook"></i></a>
                 <a href="#"><i class="fab fa-instagram"></i></a>
@@ -34,20 +34,26 @@
       </div>
     </div>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <div class="container">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Productos</a></li>
-          <li class="nav-item"><a class="nav-link" href="promociones.html">Promociones</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Blog</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Contacto</a></li>
-        </ul>
-        <span class="navbar-text">Teléfono: +56 9 77089850</span>
-        <a href="#" class="nav-link">Iniciar sesión</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="container">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+            <li class="nav-item"><a class="nav-link" href="index.html#productos">Productos</a></li>
+            <li class="nav-item"><a class="nav-link" href="promociones.html">Promociones</a></li>
+            <li class="nav-item"><a class="nav-link active" href="index.html#blog">Blog</a></li>
+            <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
+          </ul>
+          <span class="navbar-text">Teléfono: +56 9 77089850</span>
+          <a href="#" class="nav-link">Iniciar sesión</a>
+        </div>
       </div>
     </nav>
-  </header>
 
+  </header>
   <!-- Blog -->
   <section class="container my-5">
     <div class="row">
@@ -115,7 +121,6 @@
       </div>  
     </div>
   </section>
-
   <!-- Footer -->
   <footer class="container-fluid py-3 footer">
     <div class="container">
