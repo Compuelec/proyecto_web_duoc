@@ -15,9 +15,35 @@ header .bg-primary {
   color: var(--color-blanco);
 }
 
-/* Cambiar el color de fondo del footer */
-footer .bg-primary {
-  background-color: var(--primary-color);
+/* FOOTER */
+
+.footer {
+  background-color: var(--primary-color); /* Cambiar el color de fondo del footer */
+}
+
+.footer .container {
+  padding-top: 40px;
+  padding-bottom: 20px;
+}
+
+.footer h4 {
+  color: var(--color-blanco);
+  font-weight: 400;
+  margin-bottom: 35px;
+}
+
+.footer p {
+  color: #ffffffa7;
+  font-size: 16px;
+}
+
+.txt-derechos p {
+  margin-top: 20px;
+  color: #e3e3e365;
+}
+
+.img-webpayplus {
+  width: 90%;
 }
 
 /* Cambiar el color del texto del footer */
@@ -38,11 +64,6 @@ nav .nav-link {
 /* Cambiar el color del texto activo en la barra de navegación */
 nav .nav-link.active, nav .nav-link:hover {
   color: var(--secondary-color) !important;
-}
-
-.card {
-  padding-top: 7%;
-  margin: 2%;
 }
 
 /* Añade sombras en las tarjetas*/
@@ -71,6 +92,11 @@ nav .nav-link.active, nav .nav-link:hover {
 }
 
 /* Cambiar el estilo del botón "Leer más" */
+.card-body a {
+  width: 100%;
+  margin: 3px;
+}
+
 .card .btn-primary {
   background-color: var(--secondary-color);
   border-color: var(--secondary-color);
