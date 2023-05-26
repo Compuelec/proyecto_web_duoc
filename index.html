@@ -45,10 +45,15 @@
             <li class="nav-item"><a class="nav-link" href="index.html#productos">Productos</a></li>
             <li class="nav-item"><a class="nav-link" href="promociones.html">Promociones</a></li>
             <li class="nav-item"><a class="nav-link" href="index.html#blog">Blog</a></li>
+            <li id="carrito-enlace" class="nav-item" style="display: none;"><a class="nav-link" href="carrito.html">Carrito</a></li>
             <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
           </ul>
-          <span class="navbar-text">Teléfono: +56 9 77089850</span>
-          <a href="#" class="nav-link">Iniciar sesión</a>
+          <div class="navbar-text">
+            <div id="carrito-icono" style="display:none;">
+                <i class="fas fa-shopping-cart"></i>
+                <span id="carrito-cantidad" class="badge badge-pill badge-primary">0</span>
+            </div>
+          </div>
         </div>
       </div>
     </nav>
@@ -89,115 +94,7 @@
 
   <!-- Vitrina de productos -->
   <section class="container my-5 section-producto" id="productos">
-    <div class="row">
-
-
-      <div class="col-md-6 col-lg-3 mb-4">
-        <div class="card cardProducto">
-          <img src="img/productos/1-2-300x300.jpg" class="card-img-top" alt="Producto 1">
-          <div class="card-body">
-            <h5 class="card-title">Kuchen de nuez</h5>
-            <p class="card-text">Disfruta de nuestro tradicional kuchen con nueces y caramelo. Es perfecto para la hora del té, sin embargo también es una buena opción como postre.</p>
-            <p class="card-text">$10.000</p>
-            <a onclick="AgregarCarrito('ku-01','Kuchen de nuez', 10000, 1);"
-               class="btn btn-primary">
-               Agregar al carrito</a>
-            <a href="kuchen-nuez.html" class="btn btn-secondary">Ver detalles</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-6 col-lg-3 mb-4">
-        <div class="card cardProducto">
-          <img src="img/productos/2-1-300x300.jpg" class="card-img-top" alt="Producto 1">
-          <div class="card-body">
-            <h5 class="card-title">Kuchen de manzana</h5>
-            <p class="card-text">Disfruta de nuestro tradicional kuchen manzana. Es perfecto para la hora del té, sin embargo también es una buena opción como postre. Una preparación para compartir con toda la familia.</p>
-            <p class="card-text">$10.000</p>
-            <a href="#" class="btn btn-primary">Agregar al carrito</a>
-            <a href="kuchen-manzana.html" class="btn btn-secondary">Ver detalles</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-6 col-lg-3 mb-4">
-        <div class="card cardProducto">
-          <img src="img/productos/3-1-300x300.jpg" class="card-img-top" alt="Producto 1">
-          <div class="card-body">
-            <h5 class="card-title">Kuchen de arándanos y frambuesa</h5>
-            <p class="card-text">Disfruta de nuestro Kuchen de arándanos y frambuesa con miga, es una excelente eleccion para compartir con toda la familia.</p>
-            <p class="card-text">$10.000</p>
-            <a href="#" class="btn btn-primary">Agregar al carrito</a>
-            <a href="kuchen-arandanos-frambuesa.html" class="btn btn-secondary">Ver detalles</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-6 col-lg-3 mb-4">
-        <div class="card cardProducto">
-          <img src="img/productos/5-1-300x300.jpg" class="card-img-top" alt="Producto 1">
-          <div class="card-body">
-            <h5 class="card-title">Pie de maracuyá y merengue</h5>
-            <p class="card-text">Delicioso pie con crema de maracuyá y merengue</p>
-            <p class="card-text">$10.000</p>
-            <a href="#" class="btn btn-primary">Agregar al carrito</a>
-            <a href="pie-maracuya-merengue.html" class="btn btn-secondary">Ver detalles</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-6 col-lg-3 mb-4">
-        <div class="card cardProducto">
-          <img src="img/productos/7-1-300x300.jpg" class="card-img-top" alt="Producto 1">
-          <div class="card-body">
-            <h5 class="card-title">Cheesecake de frambuesa</h5>
-            <p class="card-text">Suave y cremoso cheesecake de frutos rojos con frescos arándanos y con salsa de frambuesa.</p>
-            <p class="card-text">$10.000</p>
-            <a href="#" class="btn btn-primary">Agregar al carrito</a>
-            <a href="cheesecake-frambuesa.html" class="btn btn-secondary">Ver detalles</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-6 col-lg-3 mb-4">
-        <div class="card cardProducto">
-          <img src="img/productos/8-1-300x300.jpg" class="card-img-top" alt="Producto 1">
-          <div class="card-body">
-            <h5 class="card-title">Cheesecake de maracuyá</h5>
-            <p class="card-text">Suave y cremoso cheesecake de maracuyá, el fruto de la pasión traído desde Centroamérica.</p>
-            <p class="card-text">$10.000</p>
-            <a href="#" class="btn btn-primary">Agregar al carrito</a>
-            <a href="cheesecake-maracuya.html" class="btn btn-secondary">Ver detalles</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-6 col-lg-3 mb-4">
-        <div class="card cardProducto">
-          <img src="img/productos/Apple-pie-2-300x300.jpg" class="card-img-top" alt="Producto 1">
-          <div class="card-body">
-            <h5 class="card-title">Apple Pie</h5>
-            <p class="card-text">Apple Pie relleno de frescas manzanas laminadas con salsa de vainilla y cubierta de miga Streusel.</p>
-            <p class="card-text">$10.000</p>
-            <a href="#" class="btn btn-primary">Agregar al carrito</a>
-            <a href="apple-pie.html" class="btn btn-secondary">Ver detalles</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-6 col-lg-3 mb-4">
-        <div class="card cardProducto">
-          <img src="img/productos/cheesecake_chocolate_1-300x300.jpg" class="card-img-top" alt="Producto 1">
-          <div class="card-body">
-            <h5 class="card-title">Cheesecake de chocolate</h5>
-            <p class="card-text">Suave y cremoso cheesecake de chocolate.</p>
-            <p class="card-text">$10.000</p>
-            <a href="#" class="btn btn-primary">Agregar al carrito</a>
-            <a href="cheesecake-chocolate.html" class="btn btn-secondary">Ver detalles</a>
-          </div>
-        </div>
-      </div>
-
+    <div id="productos-container" class="row">
     </div>
   </section>
 

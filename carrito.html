@@ -43,9 +43,9 @@
           <ul class="navbar-nav mr-auto">
             <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
             <li class="nav-item"><a class="nav-link" href="index.html#productos">Productos</a></li>
-            <li class="nav-item"><a class="nav-link active" href="promociones.html">Promociones</a></li>
+            <li class="nav-item"><a class="nav-link" href="promociones.html">Promociones</a></li>
             <li class="nav-item"><a class="nav-link" href="index.html#blog">Blog</a></li>
-            <li id="carrito-enlace" class="nav-item" style="display: none;"><a class="nav-link" href="carrito.html">Carrito</a></li>
+            <li id="carrito-enlace" class="nav-item" style="display: none;"><a class="nav-link active" href="carrito.html">Carrito</a></li>
             <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
           </ul>
           <div class="navbar-text">
@@ -59,22 +59,27 @@
     </nav>
 
   </header>
-  <!-- Promociones -->
-  <section class="container">
-    <div class="row">
-      <div class="col-md-4 mb-4">
-        <div class="card">
-          <img src="img/DESCUENTO.jpg" class="card-img-top" alt="Entrada 1">
-        </div>
-      </div>
 
-      <div class="col-md-4 mb-4">
-        <div class="card">
-          <img src="img/DESCUENTO2.jpg" class="card-img-top" alt="Entrada 1">
+    <div class="container mt-5">
+        <table id="tabla-carrito" class="table table-bordered table-striped">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">Código</th>
+                    <th scope="col">Producto</th>
+                    <th scope="col">Precio Unitario</th>
+                    <th scope="col" class="text-center">Cantidad</th>
+                    <th scope="col" class="text-center">Total</th>
+                    <th scope="col" class="text-center">Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+        <div id="totales" class="text-right font-weight-bold">
+            <!-- Los totales se llenarán dinámicamente desde JavaScript -->
         </div>
-      </div>
     </div>
-  </section>
+
   <!-- Footer -->
   <footer class="container-fluid py-3 footer">
     <div class="container">
@@ -101,6 +106,7 @@
       </div>
     </div>
   </footer>
+
 <!-- Jquery -->
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <!-- Boostrap -->

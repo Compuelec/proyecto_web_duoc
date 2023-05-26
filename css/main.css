@@ -61,7 +61,28 @@
 }
 
 /* SECCION BARRA DE NAVEGACION (MENU) */
+.fixed-top {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000; 
+}
 
+#carrito-icono {
+    position: relative;
+    color: var(--secondary-color);/* Color del ícono del carrito */
+}
+
+#carrito-cantidad {
+    position: absolute;
+    top: -10px; 
+    right: -10px; 
+    background-color: red; 
+    padding: 4px 6px; 
+    border-radius: 50%; 
+    min-width: 12px;
+    text-align: center;
+} 
 
 /* SECCION SLIDER */
 .carousel-item img { /* Cambiar el ancho y alto de la imagen en el carrusel */
@@ -71,7 +92,7 @@
 
 /* SECCION DE PRODUCTOS */
 .section-producto .cardProducto {
-  margin-bottom: 20px;
+  margin-bottom: 50px;
 }
 .section-producto .card-title { /* Cambiar el estilo del título de las tarjetas */
   font-weight: bold;
@@ -120,6 +141,13 @@
   text-transform: uppercase;
   letter-spacing: 1px;
 }
+
+/* SECCION CARRITO DE COMPRAS*/
+#tabla-carrito button {
+  margin: 0 5px;
+  padding: 2px 4px;
+}
+
 
 /* PANTALLA EN RESOLUCIONES < 992 px */
 @media (max-width: 991px) {
