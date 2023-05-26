@@ -239,6 +239,19 @@ function MostrarCarrito() {
     let iva = 0;
     let total = 0;
 
+    if (carrito.length === 0) {
+        const carritoVacioMensaje = document.createElement('p');
+        carritoVacioMensaje.textContent = 'No hay productos en el carrito.';
+        tablaCarrito.appendChild(carritoVacioMensaje);
+
+        // Redirigir a la página de inicio cuando el carrito esté vacío y se encuentre en la página del carrito
+        if (window.location.pathname.includes('carrito.html')) {
+            window.location.href = 'index.html';
+        }
+
+        return;
+    }
+
     const productosAgrupados = carrito.reduce((acumulador, productoActual) => {
         const productoExistente = acumulador.find(producto => producto.codigo === productoActual.codigo);
         if (productoExistente) {
