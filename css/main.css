@@ -86,7 +86,7 @@
 
 /* SECCION SLIDER */
 .carousel-item img { /* Cambiar el ancho y alto de la imagen en el carrusel */
-  max-height: 350px;
+  max-height: 520px;
   width: 100%;
 }
 
