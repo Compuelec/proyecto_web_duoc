@@ -142,6 +142,51 @@
   letter-spacing: 1px;
 }
 
+/* SECCION FORMULARIO */
+/* SECCION FORMULARIO */
+.invalid-feedback {
+  display: none;
+  color: #fff;
+  background-color: #dc3545;
+  padding: 0.5rem;
+  position: absolute;
+  z-index: 1;
+  width: max-content;
+  max-width: 100%;
+  border-radius: 0.55rem;
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+  transform: translate(-50%, 0%);
+  left: 75%;
+  top: calc(100% + 1px);
+}
+
+.invalid-feedback::before {
+  content: "";
+  position: absolute;
+  border-width: 0.5rem;
+  border-style: solid;
+  border-color: transparent transparent #dc3545 transparent;
+  top: -1rem; /* Mover la flecha más cerca del tooltip */
+  left: 80%;
+  transform: translateX(-50%);
+}
+
+.form-check-input.is-invalid ~ .invalid-feedback {
+  display: block;
+  transform: none;
+  position: relative;
+  margin-top: 0.25rem;
+  left: unset;
+  top: unset;
+}
+
+
+
+
+
+
+
 /* SECCION CARRITO DE COMPRAS*/
 #tabla-carrito button {
   margin: 0 5px;
