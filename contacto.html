@@ -60,50 +60,67 @@
 
   </header>
   <!-- Contacto -->
-  <div class="container py-5">
-    <div class="col-lg-9 m-auto">
-      <form>
-        <div class="form-row">
-          <div class="col-md-6 mb-3">
-            <label for="validationDefault01">Nombre</label>
-            <input type="text" class="form-control" id="validationDefault01" required>
-          </div>
-          <div class="col-md-6 mb-3">
-            <label for="validationDefault02">Apellido</label>
-            <input type="text" class="form-control" id="validationDefault02" required>
-          </div>
+<div class="container py-5">
+  <div class="col-lg-9 m-auto">
+    <form id="formulario" novalidate>
+      <div class="form-row">
+        <div class="col-md-6 mb-3">
+          <label for="nombre">Nombre</label>
+          <input type="text" class="form-control" id="nombre">
+          <div class="invalid-feedback"></div>
         </div>
-        <div class="form-row">
-          <div class="col-md-6 mb-3">
-            <label for="validationDefault03">E-mail</label>
-            <input type="text" class="form-control" id="validationDefault03" required>
-          </div>
-          <div class="col-md-3 mb-3">
-            <label for="validationDefault04">Ciudad</label>
-            <select class="custom-select" id="validationDefault04" required>
-              <option selected disabled value="">Seleccione...</option>
-              <option value="villaAlemana">Villa Alemana</option>
-              <option value="quilpue">Quilpue</option>
-              <option value="vina">Viña del Mar</option>
-            </select>
-          </div>
-          <div class="col-md-3 mb-3">
-            <label for="validationDefault05">Teléfono</label>
-            <input type="text" class="form-control" id="validationDefault05" required>
-          </div>
+        <div class="col-md-6 mb-3">
+          <label for="apellido">Apellido</label>
+          <input type="text" class="form-control" id="apellido">
+          <div class="invalid-feedback"></div>
         </div>
-        <div class="form-group">
-          <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="" id="invalidCheck2" required>
-            <label class="form-check-label" for="invalidCheck2">
-              Acepta terminos y condiciones
-            </label>
-          </div>
+      </div>
+      <div class="form-row">
+        <div class="col-md-6 mb-3">
+          <label for="telefono">Teléfono</label>
+          <input type="text" class="form-control" id="telefono">
+          <div class="invalid-feedback"></div>
         </div>
-        <button class="btn btn-primary" type="submit">Enviar</button>
-      </form>
-    </div>
+        <div class="col-md-6 mb-3">
+          <label for="ciudad">Ciudad</label>
+          <select class="custom-select" id="ciudad">
+            <option selected disabled value="">Seleccione...</option>
+            <option value="villaAlemana">Villa Alemana</option>
+            <option value="quilpue">Quilpue</option>
+            <option value="vina">Viña del Mar</option>
+          </select>
+          <div class="invalid-feedback"></div>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="col-md-6 mb-3">
+          <label for="correo">E-mail</label>
+          <input type="text" class="form-control" id="correo">
+          <div class="invalid-feedback"></div>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="col-md-12 mb-3">
+          <label for="mensaje">Mensaje</label>
+          <textarea class="form-control" id="mensaje"></textarea>
+          <div class="invalid-feedback"></div>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="aceptar">
+          <label class="form-check-label" for="aceptar">
+            Acepta términos y condiciones
+          </label>
+        </div>
+      </div>
+      <button class="btn btn-primary" type="submit">Enviar</button>
+    </form>
   </div>
+</div>
+
+
+
   <!-- Footer -->
   <footer class="container-fluid py-3 footer">
     <div class="container">

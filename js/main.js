@@ -11,12 +11,10 @@ function MensajeAlerta(mensaje, tipo){
 let carrito = [];
 
 window.onload = cargarCarritoDesdeLocalStorage();
-// window.onload = ActualizarCarritoIcono();
-// window.onload = MostrarCarrito();
-// window.onload = cargarProductos();
 
 window.addEventListener('storage', cargarCarritoDesdeLocalStorage);
 
+// Función para cargar el carrito desde el localStorage
 function cargarCarritoDesdeLocalStorage() {
     const carritoGuardado = localStorage.getItem('carrito');
     if (carritoGuardado) {
@@ -24,7 +22,6 @@ function cargarCarritoDesdeLocalStorage() {
         ActualizarCarritoIcono();
     }
 }
-
 
 // Función para guardar el carrito en el localStorage
 function guardarCarritoEnLocalStorage() {
@@ -37,7 +34,6 @@ function actualizarCarritoYLocalStorage() {
     guardarCarritoEnLocalStorage();
     ActualizarCarritoIcono();
 }
-
 
 function AgregarCarrito(codigo, producto, precio, cantidad) {
     const itemExistente = carrito.find(item => item.codigo === codigo);
@@ -76,7 +72,7 @@ function ActualizarCarritoIcono() {
     const carritoCantidad = document.getElementById('carrito-cantidad');
     const enlaceCarrito = document.getElementById('carrito-enlace');
     if (carrito.length > 0) {
-        carritoCantidad.textContent = carrito.reduce((total, item) => total + item.cantidad, 0);
+        carritoCantidad.textContent = carrito.reduce((total, item) => total + item.cantidad, 0); // aqui acumulamos la cantidad de productos en el carrito
         enlaceCarrito.style.display = 'block'; 
         carritoIcono.style.display = 'block';  
     } else {
@@ -161,6 +157,7 @@ const productos = [
     }
 ]
 
+// Aqui cargamnos los productos en el DOM (HTML)
 function cargarProductos() {
     const container = document.getElementById('productos-container');
 
@@ -216,7 +213,10 @@ function cargarProductos() {
         container.appendChild(productoDiv);
     });
 }
+// Llama a la función cuando la página termine de cargar y cargue los productos
+window.onload = cargarProductos;
 
+// Esto hace que el navbar se fije en la parte superior cuando se hace scroll
 $(window).scroll(function() {
     if ($(window).scrollTop() >= 200) {   // puedes ajustar este valor
         $('.navbar').addClass('fixed-top');
@@ -225,10 +225,9 @@ $(window).scroll(function() {
         $('.navbar').removeClass('fixed-top');
     }
 });
-// Llama a la función cuando la página termine de cargar
-window.onload = cargarProductos;
 
 
+// Funcion para mostrar el carrito en el DOM (HTML)
 function MostrarCarrito() {
     const tablaCarrito = document.getElementById('tabla-carrito').getElementsByTagName('tbody')[0];
     const totales = document.getElementById('totales');
@@ -239,6 +238,7 @@ function MostrarCarrito() {
     let iva = 0;
     let total = 0;
 
+    // verificamos si el carrito esta vacio
     if (carrito.length === 0) {
         const carritoVacioMensaje = document.createElement('p');
         carritoVacioMensaje.textContent = 'No hay productos en el carrito.';
@@ -252,6 +252,7 @@ function MostrarCarrito() {
         return;
     }
 
+    // Recorremos el carrito y agregamos los productos si estos ya estan en el carrito sumamos la cantidad
     const productosAgrupados = carrito.reduce((acumulador, productoActual) => {
         const productoExistente = acumulador.find(producto => producto.codigo === productoActual.codigo);
         if (productoExistente) {
@@ -262,6 +263,7 @@ function MostrarCarrito() {
         return acumulador;
     }, []);
 
+    // Recorremos los productos agrupados y los agregamos a la tabla del carrito en el html
     productosAgrupados.forEach((producto, index) => {
         const fila = tablaCarrito.insertRow();
         fila.insertCell().textContent = producto.codigo;
@@ -340,4 +342,137 @@ function MostrarCarrito() {
     function formatCurrency(amount) {
         return new Intl.NumberFormat('es-CL', { style: 'currency', currency: 'CLP' }).format(amount);
     }
+}
+
+
+// Función genérica para validar un campo de texto requerido
+function validarRequerido(input) {
+  if (input.value.trim() === '') {
+    mostrarError(input, `Debe ingresar su ${input.id}`);
+    return false;
+  } else {
+    mostrarExito(input);
+    return true;
+  }
+}
+
+// Función para validar teléfono
+function validarTelefono(input) {
+  if (input.value.trim() === '') {
+    mostrarError(input, `Debe ingresar su ${input.id}`);
+    return false;
+  } else if (isNaN(input.value.trim())) {
+    mostrarError(input, 'Solo números');
+    return false;
+  } else {
+    mostrarExito(input);
+    return true;
+  }
+}
+
+// Agregar el evento de keydown al campo de teléfono
+const telefonoInput = document.getElementById('telefono');
+telefonoInput.addEventListener('keydown', soloNumeros);
+
+// Función para validar el formulario
+function validarFormulario(event) {
+  event.preventDefault();
+
+  const nombreInput = document.getElementById('nombre');
+  const apellidoInput = document.getElementById('apellido');
+  const telefonoInput = document.getElementById('telefono');
+  const ciudadInput = document.getElementById('ciudad');
+  const correoInput = document.getElementById('correo');
+  const mensajeInput = document.getElementById('mensaje');
+  const aceptarInput = document.getElementById('aceptar');
+
+  // Validar solo números en el teléfono
+  telefonoInput.addEventListener('keydown', soloNumeros);
+
+  let esValido = true;
+
+  // Validar campos requeridos
+  esValido &= validarRequerido(nombreInput);
+  esValido &= validarRequerido(apellidoInput);
+  esValido &= validarTelefono(telefonoInput); // Validar teléfono
+  esValido &= validarRequerido(correoInput);
+  esValido &= validarRequerido(mensajeInput);
+
+  // Validar ciudad seleccionada
+  if (ciudadInput.selectedIndex === 0) {
+    mostrarError(ciudadInput, 'Debe seleccionar una ciudad');
+    esValido = false;
+  } else {
+    mostrarExito(ciudadInput);
+  }
+
+  // Validar correo
+  if (correoInput.value.trim() !== '' && !validarCorreo(correoInput.value.trim())) {
+    mostrarError(correoInput, 'Ingrese un correo electrónico válido');
+    esValido = false;
+  }
+
+  // Validar aceptar condiciones
+  if (!aceptarInput.checked) {
+    const mensaje = 'Debe aceptar las condiciones';
+    MensajeAlerta(mensaje, 'error');
+    esValido = false;
+  } 
+
+  if (esValido) {
+    const mensaje = 'Formulario enviado correctamente';
+    MensajeAlerta(mensaje, 'success');
+    // Redirigir a la página de inicio cuando el mensaje sea enviado correctamente
+    if (window.location.pathname.includes('contacto.html')) {
+        setTimeout(function() {
+            window.location.href = 'index.html';
+        }, 3000);
+    }
+  }
+}
+
+// Adjuntar el evento de submit al formulario
+document.getElementById('formulario').addEventListener('submit', validarFormulario);
+
+// Evento de entrada para validar los campos de entrada
+const inputs = document.querySelectorAll('input, select, textarea'); // Agregado 'textarea'
+inputs.forEach(input => input.addEventListener('input', function(event) {
+  // Removido la funcionalidad de eliminar mensaje de error al teclear en aceptar condiciones
+  if (event.target.id !== 'aceptar') {
+    if (event.target.id === 'telefono') {
+      validarTelefono(event.target);
+    } else {
+      validarRequerido(event.target);
+    }
+  }
+}));
+
+
+// Función para mostrar errores
+function mostrarError(input, mensaje) {
+  const feedback = input.nextElementSibling;
+  feedback.innerText = mensaje;
+  input.classList.remove('is-valid');
+  input.classList.add('is-invalid');
+}
+
+// Función para mostrar éxito
+function mostrarExito(input) {
+  const feedback = input.nextElementSibling;
+  feedback.innerText = '';
+  input.classList.remove('is-invalid');
+  input.classList.add('is-valid');
+}
+
+// Función para validar el correo
+function validarCorreo(correo) {
+  const regex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+  return regex.test(correo);
+}
+
+// Función para permitir solo números
+function soloNumeros(event) {
+  if (!/^[0-9]$/.test(event.key) && event.key !== 'Backspace' && event.key !== 'Delete') {
+    event.preventDefault();
+  }
 }
