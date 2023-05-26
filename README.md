@@ -24,3 +24,7 @@ git clone https://github.com/Compuelec/proyecto_web_duoc.git
 - Paula Palma
 - Oscar Santander
 - Carlos Abarca
+
+
+![Web_Duoc](https://github.com/Compuelec/proyecto_web_duoc/assets/105996405/914883d2-10f1-4a55-a889-16495736aab7)
+
