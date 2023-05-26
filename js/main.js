@@ -193,11 +193,6 @@ function cargarProductos() {
         precioProducto.className = 'card-text';
         cardBody.appendChild(precioProducto);
 
-        const stockProducto = document.createElement('p');
-        stockProducto.textContent = `Stock: ${producto.stock}`;
-        stockProducto.className = 'card-text';
-        cardBody.appendChild(stockProducto);
-
         const botonAgregar = document.createElement('a');
         botonAgregar.textContent = 'Agregar al carrito';
         botonAgregar.className = 'btn btn-primary';
@@ -225,7 +220,6 @@ $(window).scroll(function() {
         $('.navbar').removeClass('fixed-top');
     }
 });
-
 
 // Funcion para mostrar el carrito en el DOM (HTML)
 function MostrarCarrito() {
@@ -344,7 +338,6 @@ function MostrarCarrito() {
     }
 }
 
-
 // Función genérica para validar un campo de texto requerido
 function validarRequerido(input) {
   if (input.value.trim() === '') {
@@ -446,7 +439,6 @@ inputs.forEach(input => input.addEventListener('input', function(event) {
     }
   }
 }));
-
 
 // Función para mostrar errores
 function mostrarError(input, mensaje) {
