@@ -48,33 +48,35 @@
             <li id="carrito-enlace" class="nav-item" style="display: none;"><a class="nav-link active" href="carrito.html">Carrito</a></li>
             <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
           </ul>
-          <div class="navbar-text">
-            <a href="carrito.html" id="carrito-icono" style="display:none;">
-                <i class="fas fa-shopping-cart"></i>
-                <span id="carrito-cantidad" class="badge badge-pill badge-primary">0</span>
-            </a>
-          </div>
         </div>
+      </div>
+      <div class="navbar-text">
+        <a href="carrito.html" id="carrito-icono" style="display:none;">
+            <i class="fas fa-shopping-cart"></i>
+            <span id="carrito-cantidad" class="badge badge-pill badge-primary">0</span>
+        </a>
       </div>
     </nav>
 
   </header>
 
     <div class="container mt-5">
-        <table id="tabla-carrito" class="table table-bordered table-striped">
-            <thead class="thead-dark">
-                <tr>
-                    <th scope="col">Código</th>
-                    <th scope="col">Producto</th>
-                    <th scope="col">Precio Unitario</th>
-                    <th scope="col" class="text-center">Cantidad</th>
-                    <th scope="col" class="text-center">Total</th>
-                    <th scope="col" class="text-center">Acciones</th>
-                </tr>
-            </thead>
-            <tbody>
-            </tbody>
-        </table>
+        <div class="content-table">
+          <table id="tabla-carrito" class="table table-bordered table-striped">
+              <thead class="thead-dark">
+                  <tr>
+                      <th scope="col">Código</th>
+                      <th scope="col">Producto</th>
+                      <th scope="col">Precio Unitario</th>
+                      <th scope="col" class="text-center">Cantidad</th>
+                      <th scope="col" class="text-center">Total</th>
+                      <th scope="col" class="text-center">Acciones</th>
+                  </tr>
+              </thead>
+              <tbody>
+              </tbody>
+          </table>
+        </div>
         <div id="totales" class="text-right font-weight-bold">
             <!-- Los totales se llenarán dinámicamente desde JavaScript -->
         </div>
@@ -122,10 +124,10 @@
 <script src="js/main.js"></script>
 <script src="js/api-payku.js"></script>
 <script>
-        window.onload = function() {
-            ActualizarCarritoIcono();
-            MostrarCarrito();
-        };
+    window.onload = function() {
+        ActualizarCarritoIcono();
+        MostrarCarrito();
+    };
 </script>
 </body>
 </html>

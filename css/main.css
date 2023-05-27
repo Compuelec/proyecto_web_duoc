@@ -72,6 +72,10 @@
     z-index: 1000; 
 }
 
+.carrito-nav-menu {
+  display: none;
+}
+
 #carrito-icono {
     position: relative;
     color: var(--secondary-color);/* Color del ícono del carrito */
@@ -213,5 +217,14 @@
   }
   .logo-container img {
     width: 50%;
+  }
+}
+
+
+/* PANTALLA EN RESOLUCIONES < 607 px */
+@media (max-width: 606px) {
+  .content-table {
+    overflow-x: auto;
+    display: block;
   }
 }

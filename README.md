@@ -9,6 +9,7 @@ Proyecto para la asignatura de programación web, en primera instancia es desarr
 - HTML5
 - CSS3
 - BOOTSTRAP
+- JAVASCRIPT
 
 ## Instalación y configuración
 
