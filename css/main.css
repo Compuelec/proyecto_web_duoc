@@ -143,7 +143,6 @@
 }
 
 /* SECCION FORMULARIO */
-/* SECCION FORMULARIO */
 .invalid-feedback {
   display: none;
   color: #fff;
@@ -181,18 +180,15 @@
   top: unset;
 }
 
-
-
-
-
-
-
 /* SECCION CARRITO DE COMPRAS*/
 #tabla-carrito button {
   margin: 0 5px;
   padding: 2px 4px;
 }
 
+#botonPagar {
+  margin-bottom: 20px;
+}
 
 /* PANTALLA EN RESOLUCIONES < 992 px */
 @media (max-width: 991px) {

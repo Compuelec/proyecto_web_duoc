@@ -1,17 +1,19 @@
 // Datos de autenticación de Payku
-const publicKey = "48f146589a1dce7fd370c006bba5e236";
-const privateKey = "ba73a6784697b87781a5be4fd0003b07";
-const endpoint = "https://app.payku.cl/api/transaction"; // Cambia esto según el endpoint específico que desees utilizar
+const publicKey = "tkpu0db1bc64984cff827371070338d2";
+const privateKey = "tkpi7488e824bc3d39a82a0b223a789c";
+const endpoint = "https://des.payku.cl/api/transaction"; // desarrollo
+// const endpoint = "https://app.payku.cl/api/transaction"; // producción
 
 // Función para obtener los datos de transacción desde tu carrito de compras
 function obtenerDatosDeTransaccion() {
-  // Obtén los elementos del carrito de compras desde la tabla
+  // Obténemos los elementos del carrito de compras desde la tabla
   const tablaCarrito = document.getElementById("tabla-carrito");
   const filas = tablaCarrito.getElementsByTagName("tbody")[0].getElementsByTagName("tr");
 
   // Variables para almacenar los detalles de los productos y el total
   const detallesProductos = [];
   let total = 0;
+  let totalSubtotal = 0;
 
   // Recorre las filas de la tabla para obtener los datos de cada producto
   for (let i = 0; i < filas.length; i++) {
@@ -32,14 +34,15 @@ function obtenerDatosDeTransaccion() {
     });
 
     // Calcula el total acumulando los subtotales de cada producto
-    total += subtotal;
+    totalSubtotal += subtotal;
   }
 
   // Obtiene el email del usuario desde tu carrito de compras
-  const email = 'losbar@gmail.com';//obtenerEmailDelCarrito();
+  const email = 'losbar@gmail.com'; //obtenerEmailDelCarrito(); ESTO TENEMOS QUE IMPLEMENTARLO
 
-  // Obtiene la orden del comercio desde tu carrito de compras
-  const order = obtenerOrdenDelCarrito();
+  let iva = totalSubtotal * 0.19;
+
+  total = totalSubtotal + iva;
 
   let totalPagar = total.toString().replace(/\D/g, '');
 
@@ -48,28 +51,15 @@ function obtenerDatosDeTransaccion() {
     email: email,
     order: Math.floor(10000000 + Math.random() * 90000000),
     payment: 1, // pago con webpay
-    subject: "Venta pasteleria Danesa",
-    detallesProductos: detallesProductos,
+    subject: 'Venta Pasteleria',
     total: totalPagar,
     amount: parseInt(totalPagar),
+    details: detallesProductos,
+    expired: '',
     currency: "CLP",
+    // urlConfirmation: "http://127.0.0.1:5500/carrito.html",
+    // urlReturn: "http://127.0.0.1:5500/carrito.html",
   };
-}
-
-// Función para obtener el email del usuario desde tu carrito de compras
-function obtenerEmailDelCarrito() {
-  // Aquí debes implementar la lógica para obtener el email del usuario desde tu carrito de compras
-  // Retorna el email obtenido
-  const emailElement = 'losbar@gmail.com';//document.getElementById("email"); // Reemplaza "email" con el ID o selector del elemento que contiene el email en tu carrito de compras
-  return emailElement.value;
-}
-
-// Función para obtener la orden del comercio desde tu carrito de compras
-function obtenerOrdenDelCarrito() {
-  // Aquí debes implementar la lógica para obtener la orden del comercio desde tu carrito de compras
-  // Retorna la orden obtenida
-  const orderElement =  generarNumeroTransaccion();//document.getElementById("order"); // Reemplaza "order" con el ID o selector del elemento que contiene la orden en tu carrito de compras
-  return orderElement.value;
 }
 
 // Generar un número de transacción único
@@ -118,7 +108,9 @@ function enviarTransaccionPayku() {
     .then((response) => response.json())
     .then((responseData) => {
       console.log(responseData);
-      // Maneja la respuesta de la API
+      if(responseData.url){
+        window.location.href = responseData.url;
+      }
     })
     .catch((error) => {
       console.error(error);
@@ -128,15 +120,7 @@ function enviarTransaccionPayku() {
 
 // Ejemplo de cómo usar la función para enviar la transacción a Payku
 document.getElementById("botonPagar").addEventListener("click", function () {
-  enviarTransaccionPayku().then(response => {
-    if (response.status === "register") {
-      // Redirigir a la URL proporcionada
-      window.location.href = response.url;
-    } else {
-      // Manejar otros estados de respuesta
-      console.error("La transacción no se registró correctamente.");
-    }
-  });
+  enviarTransaccionPayku();
 });
 
 
