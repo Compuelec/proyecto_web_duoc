@@ -16,6 +16,10 @@
   width: 100%;
   margin: 3px;
 }
+.col-md-8 .btn{
+  margin-top: 5%;
+  width: 30%;
+}
 .bg-primary { /* Cambiar el estilo del color de fondo primario*/
   background-color: var(--bg-primary-color) !important;
 }

@@ -113,7 +113,7 @@ const productos = [
     {
         codigo: 'pie-04',
         producto: 'Pie de maracuyá y merengue',
-        descripcion: 'Delicioso pie con crema de maracuyá y merengue.',
+        descripcion: 'La maracuyá es una fruta maravillosa. Es ácida pero también tiene un olor demasiado rico y característico. Este pie de maracuyá es una delicia, con la acidez perfecta para combinar con el merengue.',
         precio: 10000,
         stock: 10,
         imagen: 'img/productos/5-1-300x300.jpg',
@@ -122,7 +122,7 @@ const productos = [
     {
         codigo: 'chees-05',
         producto: 'Cheesecake de frambuesa',
-        descripcion: 'Suave y cremoso cheesecake de frutos rojos con frescos arándanos y con salsa de frambuesa.',
+        descripcion: 'Suave y cremoso cheesecake de frutos rojos con frescos arándanos y con salsa de frambuesa, su relleno es súper cremoso, con sabor y color natural de frambuesas frescas. La base de galletas tiene un toque salado, que siempre es excelente para un postre como este. El relleno es delicioso y cremoso con sabor a queso, frambuesa y no demasiado dulce. Simplemente perfecto.',
         precio: 10000,
         stock: 10,
         imagen: 'img/productos/7-1-300x300.jpg',
@@ -131,7 +131,7 @@ const productos = [
     {
         codigo: 'chees-mara-06',
         producto: 'Cheesecake de maracuyá',
-        descripcion: 'Suave y cremoso cheesecake de maracuyá, el fruto de la pasión traído desde Centroamérica.',
+        descripcion: 'El cheesecake de maracuyá es uno de los postres favoritos de grandes y chicos. Refrescante, aromático y tan dulce como ácida, el maracuyá es la clave de este exquisito cheesecake.',
         precio: 10000,
         stock: 10,
         imagen: 'img/productos/8-1-300x300.jpg',
@@ -140,7 +140,7 @@ const productos = [
     {
         codigo: 'apple-07',
         producto: 'Apple Pie',
-        descripcion: 'Apple Pie relleno de frescas manzanas laminadas con salsa de vainilla y cubierta de miga Streusel.',
+        descripcion: 'Apple Pie relleno de frescas manzanas laminadas con salsa de vainilla y cubierta de miga Streusel. Es una tarta de manzana muy popular en la cocina de Estados Unidos que se elabora horneando una masa rellena de manzanas. El resultado es una tarta de manzana muy aromática con un sabor característico en la que el interior queda tierno y la masa exterior crujiente.',
         precio: 10000,
         stock: 10,
         imagen: 'img/productos/Apple-pie-2-300x300.jpg',
@@ -149,7 +149,7 @@ const productos = [
     {
         codigo: 'chees-choc-08',
         producto: 'Cheesecake de chocolate',
-        descripcion: 'Suave y cremoso cheesecake de chocolate.',
+        descripcion: 'Así que todo aquel ‘chocoadicto’ que se precie, está hoy de enhorabuena, pues esta tarta de Cheesecake de chocolate por los cuatro costados; hay chocolate en la base, toneladas de chocolate y por si todo eso fuera poco más chocolate en la cobertura para rematar. ¿Quién podría resistirse a semejante tentación y festín para nuestro paladar? No es que yo lo haya intentado demasiado; ya de entrada me parecía toda una hazaña contenerme.',
         precio: 10000,
         stock: 10,
         imagen: 'img/productos/cheesecake_chocolate_1-300x300.jpg',
